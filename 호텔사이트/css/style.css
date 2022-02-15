@@ -1,0 +1,144 @@
+@charset "utf-8";
+
+/* 폰트 */
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Noto+Sans+KR:wght@300;700&family=Unna&display=swap');
+
+/* 레이아웃 */
+body { font-family: 'Noto Sans KR', sans-serif; font-size: 14px; color: #000; line-height: 1.4;}
+.wrap { width: 100%; margin: 0 auto; overflow: hidden; }
+.en { font-family: 'Unna', serif; }
+.en_1 { font-family: 'Maven Pro', sans-serif; }
+
+/* 헤더 */
+header { 
+    width: 100%; padding: 0 40px; box-sizing: border-box; 
+    height: 100px; line-height: 100px; color: #fff; z-index: 100;
+    position: fixed; top: 0;
+} 
+
+/* 헤더 - 햄버거 메뉴 */
+header .menuOpen { 
+    display: inline-block; 
+    position: absolute; top: 50%; transform: translateY(-50%);
+    width: 40px; height: 16px; line-height: 100px;
+}
+header .menuOpen span { 
+    display: block; width: 100%; height: 1px; background-color: #fff;
+    position: absolute; top: 0; left: 0;
+}
+header .menuOpen span.mid { top: 50%; }
+header .menuOpen span.bot { top: 100%; }
+
+/* 헤더 - 타이틀 */
+header .title { 
+    display: inline-block; float: left; margin-left: 70px; 
+    height: 100%; font-size: 25px;
+}
+
+/* 헤더 - 언어선택 */
+header .langs { float: left; margin-left: 220px; overflow: hidden; width: 150px; }
+header .langs li { float: left; width: 50%; }
+header .langs li:nth-child(1) { font-weight: bold; }
+header .langs li:nth-child(2) { color: #ddd; }
+header .langs li a { 
+    display: block; padding: 0 30px; box-sizing: border-box; text-transform: uppercase;
+}
+
+/* 헤더 - 예약 번호 */
+header .right { float: right; }
+header .right li { float: left; margin-right: 55px; }
+header .right li p { letter-spacing: 1px; }
+
+/* 섹션 - 이미지 슬라이드 */
+section.visual { color: #fff; }
+section.visual .slide {}
+section.visual .slide li { position: relative; width: 100%; height: 100vh; }
+section.visual .slide li img { position: absolute; right: 0; top: 0; width: 100%; }
+
+/* 이미지 위에 텍스트 */
+section.visual .slide .mainText { position: absolute; top: 35%; right: 18%; width: 25%; }
+/* 이미지 위 텍스트 - 제목 */
+section.visual .slide .mainText strong { 
+    display: block; font-size: 50px; margin-bottom: 30px; font-weight: 500;
+    letter-spacing: 2px; opacity: 1;
+}
+
+/* 이미지 위 텍스트 - 내용 */
+section.visual .slide .mainText > p {
+    font-size: 20px; font-weight: normal; line-height: 1.8; margin-bottom: 70px;
+}
+section.visual .slide .mainText .num { 
+    position: relative; font-size: 30px; font-weight: bold; margin-bottom: 30px;
+ }
+section.visual .slide .mainText .num span {
+    position: absolute; top: -10px; display: inline-block; padding: 10px 4px; opacity: 0;
+}
+section.visual .slide .mainText .message {
+    font-size: 26px; line-height: 1.2;
+}
+
+/* 이미지 위 텍스트 애니메이션 */
+
+
+/* 현재 활성화된 슬라이드 (.slick-active */
+section.visual .slide .slick-active .mainText strong {
+    animation: slide-up 3s;
+}
+section.visual .slide .slick-active .mainText > p {
+    animation: slide-up 1.5s;
+}
+
+@keyframes slide-up {
+    0% { opacity: 0; }
+    20% { opacity: 0; transform: translateY(10px);}
+}
+
+section.visual .slide .slick-active img {
+    animation: zoom 4.5s;
+}
+
+@keyframes zoom {
+    0% { transform: scale(1.2); opacity: 0.8; }
+}
+
+/* 슬라이드 번호 */
+section.visual .slide .slick-active .mainText .num span {
+    animation: trans 4.5s;
+}
+
+@keyframes trans {
+    0% { opacity: 0; transform: translateY(15px); }
+    30% { opacity: 1; transform: translateY(0); }
+    70% { opacity: 1; transform: translateY(0); }
+    100% { opacity: 0; transform: translateY(-15px); }
+}
+
+/* 슬라이드 하단 공통 메뉴 */
+section.visual .menu { 
+    position:absolute; left: 4%; bottom: 7%; 
+    padding-bottom: 7px; overflow: hidden; 
+    font-size: 21px;
+}
+section.visual .menu::after {
+    content: '';
+    width: 100%;
+    height: 4px;
+    background-color: #fff;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    animation: bar 4.5s infinite;
+}
+
+/* @keyframs :애니메이션의 구간을 지정하는 속성 */
+@keyframes bar {
+    0% { width: 0%; }
+}
+
+
+section.visual .menu li { float: left; padding-right: 20px; } 
+section.visual .menu li:nth-child(2) { padding-right: 130px; }
+section.visual .menu li:nth-child(3) { padding-right: 0; }
+section.visual .menu li span i { display: inline-block; margin-right: 10px; font-size: 18px; }
+section.visual .menu li:nth-child(2) span i { margin-right: 22px; }
+section.visual .menu li p { font-size: 28px; }
