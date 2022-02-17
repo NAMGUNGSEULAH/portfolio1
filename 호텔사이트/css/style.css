@@ -244,17 +244,144 @@ section.introduce .roomInfo .tabBox .deluxe .txtinfo .inner_detail li p {
 
 section.introduce .title.motion { animation: slide-up2 1.2s; }
 section.introduce .roomInfo.motion { animation: slide-up2 0.8s; }
-section.introduce .roomInfo .tabBox .deluxe .photo .showBox .name {
+section.introduce .roomInfo.motion .tabBox .deluxe .photo .showBox .name {
     animation: slide-up2 2s;
 }
-section.introduce .roomInfo .tabBox .txtinfo h3 { animation: slide-up2 1.4s; }
-section.introduce .roomInfo .tabBox .txtinfo p { animation: slide-up2 1.6s; }
-section.introduce .roomInfo .tabBox .txtinfo .inner_detail li { 
+section.introduce .roomInfo.motion .tabBox .txtinfo h3{ animation: slide-up2 1.4s; }
+section.introduce .roomInfo.motion .tabBox .txtinfo p { animation: slide-up2 1.6s; }
+section.introduce .roomInfo.motion .tabBox .txtinfo .inner_detail li { 
     animation: slide-up2 2s 0.2s; 
 }
-section.introduce .roomInfo .tabBox .txtinfo .inner_detail li:nth-child(2) { 
+section.introduce .roomInfo.motion .tabBox .txtinfo .inner_detail li:nth-child(2) { 
     animation: slide-up2 2.2s 0.3s; 
 }
-section.introduce .roomInfo .tabBox .txtinfo .inner_detail li:nth-child(3) { 
+section.introduce .roomInfo.motion .tabBox .txtinfo .inner_detail li:nth-child(3) { 
     animation: slide-up2 2.4s 0.4s; 
 }
+
+/* 섹션 - offer */
+section.offer { width: 87%; margin: 200px auto 100px; }
+section.offer h2 { font-size: 30px; line-height: 1.7; font-weight: 500; margin-bottom: 15px; } 
+section.offer .findBtn { display: block; font-size: 15px; color: #a68164; margin-bottom: 35px; }
+section.offer .new { width: 100%; overflow: hidden; }
+section.offer .new li { float: left; width: 23.5%; margin-right: 2%; }
+section.offer .new li:nth-child(4) { margin-right: 0;}
+section.offer .new li p.img { width: 100%; margin-bottom: 35px; height: 100%; overflow: hidden; }
+section.offer .new li p.img a { display: block; width: 100%; height: 100%; }
+section.offer .new li p.img a:hover img { transform: scale(1.2); transition: all a.5s; }
+section.offer .new li p.img img { width: 100%; transition: all 0.3s; }
+section.offer .new li span { display: block; margin-bottom: 20px; }
+section.offer .new li h3 { font-size: 20px; letter-spacing: -1px; font-weight: 500; margin-bottom: 15px;}
+section.offer .new li .hashTag {font-size: 15px; letter-spacing: -1px; color: #a68164; height: 100px;}
+section.offer .new li > a { 
+    display: inline-block; font-size: 15px; color: #a68164;
+    position: relative; padding: 5px 0; 
+}
+section.offer .new li > a::after {
+    content: ''; width: 0; height: 1px; 
+    position: absolute; left: 0; bottom: 0; 
+    background-color: #a68164;
+    transition: all 0.5s;
+}
+section.offer .new li > a:hover::after { width: 100%; }
+
+
+/* offer 영역 - 스크롤 애니메이션 */
+section.offer h2.motion { animation: slide-up2 0.8s; }
+section.offer .findBtn.motion { animation: slide-up2 1.2s; }
+section.offer li:nth-child(1).motion { animation: slide-up2 1.2s; }
+section.offer li:nth-child(2).motion { animation: slide-up2 1.8s; }
+section.offer li:nth-child(3).motion { animation: slide-up2 2.4s; }
+section.offer li:nth-child(4).motion { animation: slide-up2 3.0s; }
+
+
+/* 섹션 - dining */
+section.dining { width: 100%; overflow: hidden; background: #d7cdc5; height: 900px;}
+section.dining .slide2 { float: left; width: 50%; }
+section.dining .slide2 li { width: 100%; position: relative;}
+section.dining .slide2 li img { width: 100%; }
+/* 이미지 위의 텍스튼 */
+section.dining .slide2 li .slide_txt { 
+    position: absolute; left: 8%; bottom: 19%; color: #fff;
+}
+section.dining .slide2 li .slide_txt h3 {
+    font-size: 35px; font-weight: normal; letter-spacing: 3px; margin-bottom: 30px;
+}
+section.dining .slide2 li .slide_txt p { 
+    font-size: 18px; line-height: 1.7; margin-bottom: 45px;
+}
+
+/* view more 버튼 */
+section.dining .slide2 li .slide_txt a {
+    display: block; width: 150px; background-color: #a68164; padding: 12px 20px;
+    text-align: center; position: relative; z-index: 1;
+}
+
+/* view more 버튼 - 애니메이션 효과 */
+section.dining .slide2 li .slide_txt a::after {
+    content: ''; width: 100%; height: 0; background-color: #604d3e;
+    position: absolute; top: 0; left: 0;
+}
+section.dining .slide2 li .slide_txt a:hover::after {
+    height: 100%; transition: height 0.5s ease; z-index: -1;
+}
+
+/* 오른쪽 텍스트 커버 영역 */
+section.dining .intro_diningTxt { 
+    float: left; width: 50%; padding: 80px 0 0 80px; box-sizing: border-box;
+}
+section.dining .intro_diningTxt h3 {
+    font-size: 25px; font-weight: 500; line-height: 1.7; margin-bottom: 520px;
+}
+section.dining .intro_diningTxt p {
+    font-size: 15px; color: #a68164; line-height: 1.6;
+}
+
+
+/* 다이닝 영역 - 슬라이드 애니메이션 - .slick-active */
+section.dining .slide2 .slick-active .slide_txt h3 { animation: slide-up2 1.0s; }
+section.dining .slide2 .slick-active .slide_txt p { animation: slide-up2 1.2s; }
+section.dining .slide2 .slick-active .slide_txt a { animation: slide-up2 1.8s; }
+/* 다이닝 영역 - 스크롤 애니메이션 */
+section.dining .intro_diningTxt.motion h3 { animation: slide-up2 2.6s; }
+
+
+/* 섹션 : .greetings */
+section.greetings { width: 100%; text-align: center; margin: 100px 0 100px; }
+section.greetings h2 { font-size: 17px; font-weight: normal; color: #a68164; margin-bottom: 60px;}
+section.greetings h3 { font-size: 32px; line-height: 1.6; font-weight: 500; margin-bottom: 50px; }
+section.greetings a {
+    display: block; width: 150px; margin: auto; text-align: center;
+    border: 1px solid #a68164; padding: 12px 20px;
+}
+
+/* 섹션 : .notice */
+section.notice { width: 100%; border-top: 1px solid #d3cdb7; overflow: hidden; }
+section.notice .title_wrap { 
+    width: 7%; height: 395px; float: left;
+    border-radius: 1px solid #e3dbd7; box-sizing: border-box; position: relative;
+}
+section.notice .title_wrap .inner {
+    font-size: 20px; text-align: center;
+    position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%);
+}
+section.notice .title_wrap .inner .news_title {
+    transform: rotate(-90deg); width: 200px;
+}
+section.notice .title_wrap .inner .news_title a { display: block; color: #604d3e; font-size: 16px; }
+
+/*  */
+section.notice .notice_list li {
+    float: left; width: 33.3333%; padding-right: 30px; box-sizing: border-box;
+}
+section.notice .notice_list li .data {
+    display: block; text-align: right; font-size: 38px; 
+}
+
+/*  */
+section.notice .notice_list li .textBox { width: 80%; }
+section.notice .notice_list li .textBox strong {}
+section.notice .notice_list li .textBox .list_txt {}
+section.notice .notice_list li .textBox a.more {}
+section.notice .notice_list li .textBox a.more::after {}
+section.notice .notice_list li .textBox a.more:hover:after {}
